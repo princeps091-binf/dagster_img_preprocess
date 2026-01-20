@@ -1,0 +1,39 @@
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - LOGS_CAPTURED - Started capturing logs in process (pid: 1560223).
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - STEP_START - Started execution of step "nucleus_seeded_cyto_segmentation".
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - nucleus_seeded_cyto_segmentation - Loading 1 partitions...
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - nucleus_seeded_cyto_segmentation - Loading partition BR00115126_A01_F003 from /home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/dagster_img_preprocess/.tmp_dagster_home_020gg1ne/storage/clahe_corrected_cyto_channel/BR00115126_A01_F003 using PickledObjectFilesystemIOManager...
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - LOADED_INPUT - Loaded input "clahe_corrected_cyto_channel" using input manager "io_manager"
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - nucleus_seeded_cyto_segmentation - Loading 1 partitions...
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - nucleus_seeded_cyto_segmentation - Loading partition BR00115126_A01_F003 from /home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/dagster_img_preprocess/.tmp_dagster_home_020gg1ne/storage/nuclear_mask/BR00115126_A01_F003 using PickledObjectFilesystemIOManager...
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - LOADED_INPUT - Loaded input "nuclear_mask" using input manager "io_manager"
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - nucleus_seeded_cyto_segmentation - Loading 1 partitions...
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - nucleus_seeded_cyto_segmentation - Loading partition BR00115126_A01_F003 from /home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/dagster_img_preprocess/.tmp_dagster_home_020gg1ne/storage/nuclear_seeds/BR00115126_A01_F003 using PickledObjectFilesystemIOManager...
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - LOADED_INPUT - Loaded input "nuclear_seeds" using input manager "io_manager"
+[32m2025-12-23 15:29:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - STEP_INPUT - Got input "clahe_corrected_cyto_channel" of type "ndarray". (Type check passed).
+[32m2025-12-23 15:29:58 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - STEP_INPUT - Got input "nuclear_mask" of type "ndarray". (Type check passed).
+[32m2025-12-23 15:29:58 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - STEP_INPUT - Got input "nuclear_seeds" of type "ndarray". (Type check passed).
+[32m2025-12-23 15:30:00 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - e447bf89-5699-4bae-9955-4ea55256ff16 - 1560223 - nucleus_seeded_cyto_segmentation - STEP_FAILURE - Execution of step "nucleus_seeded_cyto_segmentation" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "nucleus_seeded_cyto_segmentation"::
+
+NameError: name 'cytoplasm_size' is not defined
+
+Stack Trace:
+  File "/home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/.pixi/envs/default/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/.pixi/envs/default/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/.pixi/envs/default/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/.pixi/envs/default/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/dagster_img_preprocess/src/dagster_img_preprocess/defs/assets/generate_cell_object.py", line 98, in nucleus_seeded_cyto_segmentation
+    cyto_segmentation = generate_nucleus_seeded_cyto_mask(clahe_corrected_cyto_channel,nuclear_mask,nuclear_seeds)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vipink/Documents/dagster_imaging_workflow/preprocess_workflow/dagster_img_preprocess/src/dagster_img_preprocess/defs/utils/mask_creation.py", line 76, in generate_nucleus_seeded_cyto_mask
+    cyto_mask = ski.morphology.remove_small_objects(otsu_thresh_img, min_size=cytoplasm_size *0.5)
+                                                                              ^^^^^^^^^^^^^^
+[0m
